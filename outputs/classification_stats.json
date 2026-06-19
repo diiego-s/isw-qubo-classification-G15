@@ -1,0 +1,36 @@
+{
+    "classifier": "random_forest",
+    "n_samples": 60,
+    "target_1_count": 17,
+    "target_1_percentage": 28.33,
+    "accuracy": 0.73,
+    "class_0": {
+        "precision": 0.74,
+        "recall": 0.98,
+        "f1": 0.84,
+        "support": 43
+    },
+    "class_1": {
+        "precision": 0.67,
+        "recall": 0.12,
+        "f1": 0.2,
+        "support": 17
+    },
+    "roc_auc": 0.74,
+    "confusion_matrix": {
+        "labels": [
+            0,
+            1
+        ],
+        "matrix": [
+            [
+                42,
+                1
+            ],
+            [
+                15,
+                2
+            ]
+        ]
+    }
+}
