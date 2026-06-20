@@ -36,9 +36,9 @@ log_id: "GXX-NN"
 
 ```yaml
 llm_name: "Gemini"
-llm_version_or_model: "e.g. GPT-5, Claude Sonnet 4.5, Gemini 2.5 Pro"
+llm_version_or_model: "Gemini Pro 3.1"
 chat_name_or_identifier: "Short name or identifier of the active chat"
-interaction_mode: "web_chat / IDE_assistant / API / desktop_app / other"
+interaction_mode: "web_chat"
 ```
 
 ### 2. Author of the interaction
