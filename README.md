@@ -87,7 +87,7 @@ You can execute the pipeline components independently via the terminal:
 
 ```bash
 python src/qubo_project/preprocessing.py \
-    --input data/sample_test_dataset.csv \
+    --input data/trial_dataset_ISW.csv \
     --target target \
     --out-data outputs/normalized.csv \
     --out-json outputs/preprocessing_res.json \
