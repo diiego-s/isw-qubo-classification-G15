@@ -45,7 +45,7 @@ team_work:
     documentation_percent: null
   collaboration_mode:
     # valori suggeriti: "pair_programming", "divisione_per_moduli", "mista"
-    type: null
+    type: pair_programming
     notes: null
     remote_collaboration_perc: 0   # Percentuale di lavoro in call (0-100)
   estimated_total_hours:
@@ -56,22 +56,22 @@ team_work:
 initial_context:
   prior_experience:
     # valori da usare: "none", "basic", "intermediate", "advanced"
-    python: null
-    pandas_numpy: null
-    scikit_learn: null
-    machine_learning: null
+    python: basic
+    pandas_numpy: none
+    scikit_learn: none
+    machine_learning: basic
     classification: null
     feature_selection: null
     optimization: null
-    QUBO: null
-    git_github: null
+    QUBO: none
+    git_github: intermediate
   initial_confidence:
     # scala 1-5: 1 = per nulla sicuri, 5 = molto sicuri
-    python_project_development: null
-    qubo_formulation: null
-    machine_learning: null
-    debugging: null
-    validating_llm_outputs: null
+    python_project_development: 4
+    qubo_formulation: 2
+    machine_learning: 3
+    debugging: 4
+    validating_llm_outputs: 4
 
 design_choices:
   correlation_computation: null
@@ -92,77 +92,77 @@ design_choices:
 llm_usage_summary:
   # Non inserire prompt o risposte complete: saranno raccolti separatamente.
   llms_used:    # Inserire un record per ogni LLM usato
-    - name: null
-      version: null
-      paid_subscription: null
+    - name: "Gemini"
+      version: "Gemini 3.1 Pro"
+      paid_subscription: yes
       usage_level_0_to_3:   # valori da 0 (non usato) a 3 (usatissimo)     
-        value: null   
+        value: 3   
   phases_where_llm_was_used:
     requirements_understanding:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     preprocessing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     qubo_formulation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     optimizer_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     classifier_selection:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     debugging:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     testing:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     documentation:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
     gui:
-      usage_level_0_to_3: null
-      usefulness_1_to_5: null
+      usage_level_0_to_3: 3
+      usefulness_1_to_5: 5
       notes: null
   estimated_llm_contribution:
-    percent_code_generated_or_suggested_by_llm: null
-    percent_code_accepted_without_major_changes: null
-    percent_documentation_generated_or_suggested_by_llm: null
+    percent_code_generated_or_suggested_by_llm: 100
+    percent_code_accepted_without_major_changes: 100
+    percent_documentation_generated_or_suggested_by_llm: 30
   human_verification:
     # descrivere come il gruppo ha controllato gli output dell'LLM. (yes/partially/no)
     methods_used:
-      - code_execution: null
-      - automated_tests: null
-      - critical_reading: null
-      - comparison_with_other_llm: null
+      - code_execution: yes
+      - automated_tests: partially
+      - critical_reading: partially
+      - comparison_with_other_llm: no
     notes: null
   llm_misleading_outputs:
     encountered: null  # (yes/partially/no)
     examples_count: null   # number of cases
     categories:     # rispondere con: yes/partially/no
-      wrong_python_code: null  
-      wrong_library_usage: null
-      wrong_qubo_formulation: null
-      wrong_ml_methodology: null
-      hallucinated_api_or_function: null
+      wrong_python_code: no  
+      wrong_library_usage: no
+      wrong_qubo_formulation: no
+      wrong_ml_methodology: no
+      hallucinated_api_or_function: no
       other: null      # indicare quale/quali
-    impact_on_project: null   # valori da 0 (nessuno) a 3 (fortissimo)     
+    impact_on_project: 0   # valori da 0 (nessuno) a 3 (fortissimo)     
   llm_overall_assessment:  
-    productivity_improvement_1_to_5: null
-    learning_support_1_to_5: null
-    risk_of_overreliance_1_to_5: null
-    trust_in_llm_outputs_1_to_5: null
-    would_use_again: null   # (yes/maybe/no)
+    productivity_improvement_1_to_5: 5
+    learning_support_1_to_5: 4
+    risk_of_overreliance_1_to_5: 2
+    trust_in_llm_outputs_1_to_5: 4
+    would_use_again: yes   # (yes/maybe/no)
     notes: null
   most_useful_project_activity: null
   most_difficult_project_activity: null
