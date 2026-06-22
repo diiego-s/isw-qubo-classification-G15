@@ -149,6 +149,5 @@ pytest src/tests/test_pipeline.py -v
 
 **Group G15**
 
-* Michele D.
-* Druimo
-* Piras78
+* Diego Serra
+* Michele Chillotti
