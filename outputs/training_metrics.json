@@ -4,9 +4,9 @@
     "training_dataset": "reduced_train.csv",
     "target_column": "target",
     "model_path": "model.joblib",
-    "n_samples": 140,
-    "n_features": 28,
-    "target_1_percentage": 20.0,
-    "dataset_input_time": 0.0,
-    "training_time": 0.07
+    "n_samples": 14000,
+    "n_features": 19,
+    "target_1_percentage": 1.46,
+    "dataset_input_time": 0.06,
+    "training_time": 1.03
 }
