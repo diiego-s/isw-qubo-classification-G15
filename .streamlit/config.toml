@@ -1,0 +1,10 @@
+# .streamlit/config.toml
+
+[theme]
+# Override the default red with an HCI-compliant "Proceed/Action" color.
+
+# Option A: Professional Action Blue (Clean, standard tech UI)
+primaryColor = "#1f77b4"
+
+# Option B: Success Green (Uncomment to use instead)
+# primaryColor = "#10b981"
