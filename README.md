@@ -140,7 +140,7 @@ python src/qubo_project/model.py predict \
 To verify the integrity of the pipeline, run the automatic test suite:
 
 ```bash
-pytest src/tests/test_pipeline.py -v
+pytest tests/test_pipeline.py -v
 
 ```
 
