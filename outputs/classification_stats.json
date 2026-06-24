@@ -1,5 +1,5 @@
 {
-    "classifier": "random_forest",
+    "classifier": "gradient_boosting",
     "n_samples": 6000,
     "target_1_count": 128,
     "target_1_percentage": 2.13,
@@ -11,12 +11,12 @@
         "support": 5872
     },
     "class_1": {
-        "precision": 0.91,
-        "recall": 0.55,
-        "f1": 0.69,
+        "precision": 0.74,
+        "recall": 0.59,
+        "f1": 0.66,
         "support": 128
     },
-    "roc_auc": 0.95,
+    "roc_auc": 0.97,
     "confusion_matrix": {
         "labels": [
             0,
@@ -24,12 +24,12 @@
         ],
         "matrix": [
             [
-                5865,
-                7
+                5845,
+                27
             ],
             [
-                57,
-                71
+                52,
+                76
             ]
         ]
     }

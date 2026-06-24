@@ -18,12 +18,13 @@ The pipeline addresses high-dimensional data challenges by:
 ```text
 .
 ├── data/               # Source datasets (e.g., sample_test_dataset.csv)
-├── files/              # Supplemental scripts and generated models
-├── llm_usage/          # Interaction logs with LLM assistants
 ├── outputs/            # Pipeline artifacts (CSVs, JSON metrics, model files)
 ├── reports/            # Analysis and project documentation
+│   └── llm_usage/      # Interaction logs with LLM assistants
+│       └── files/      # Supplemental scripts and generated models
 ├── src/
 │   └── qubo_project/   # Core source code
+│       ├── __init__.py
 │       ├── gui.py
 │       ├── model.py
 │       ├── preprocessing.py

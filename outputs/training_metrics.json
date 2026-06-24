@@ -1,12 +1,12 @@
 {
-    "classifier": "random_forest",
+    "classifier": "gradient_boosting",
     "seed": 42,
     "training_dataset": "reduced_train.csv",
     "target_column": "target",
     "model_path": "model.joblib",
     "n_samples": 14000,
-    "n_features": 19,
+    "n_features": 18,
     "target_1_percentage": 1.46,
-    "dataset_input_time": 0.06,
-    "training_time": 1.03
+    "dataset_input_time": 0.04,
+    "training_time": 3.02
 }

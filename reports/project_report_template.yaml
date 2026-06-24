@@ -13,8 +13,8 @@
 schema_version: "1.0"
 
 group_id: "G15"
-repository_url: "https://github.com/diiego-s/G15"
-submission_date: "YYYY-MM-DD"
+repository_url: "https://github.com/diiego-s/isw-qubo-classification-G15"
+submission_date: "2026-06-24"
 
 students:
   - student_id: "60/61/66505"        #Matricola completa
@@ -36,22 +36,22 @@ students:
 
 team_work:
   work_distribution:
-    design_percent: null
-    preprocessing_percent: null
-    qubo_feature_selection_percent: null
-    classification_percent: null
-    testing_percent: null
-    gui_percent: null
-    documentation_percent: null
+    design_percent: 50
+    preprocessing_percent: 50
+    qubo_feature_selection_percent: 50
+    classification_percent: 50
+    testing_percent: 50
+    gui_percent: 50
+    documentation_percent: 50
   collaboration_mode:
     # valori suggeriti: "pair_programming", "divisione_per_moduli", "mista"
     type: pair_programming
-    notes: null
-    remote_collaboration_perc: 0   # Percentuale di lavoro in call (0-100)
+    notes: "Both students worked together on all modules, utilizing a unified chat environment to orchestrate LLM prompts and review the generated code concurrently."
+    remote_collaboration_perc: 10   # Percentuale di lavoro in call (0-100)
   estimated_total_hours:
-    student_1_hours: null
-    student_2_hours: null
-    total_group_hours: null
+    student_1_hours: 25
+    student_2_hours: 25
+    total_group_hours: 30 #20 hours together and 5 hours each on remote.
 
 initial_context:
   prior_experience:
@@ -60,11 +60,11 @@ initial_context:
     pandas_numpy: none
     scikit_learn: none
     machine_learning: basic
-    classification: null
-    feature_selection: null
-    optimization: null
+    classification: none
+    feature_selection: none
+    optimization: none
     QUBO: none
-    git_github: intermediate
+    git_github: advanced
   initial_confidence:
     # scala 1-5: 1 = per nulla sicuri, 5 = molto sicuri
     python_project_development: 4
@@ -74,70 +74,69 @@ initial_context:
     validating_llm_outputs: 4
 
 design_choices:
-  correlation_computation: null
+  correlation_computation: "Spearman correlation using pandas and scipy. It was chosen to handle non-linear monotonic relationships between features and the target variable."
   QUBO_optimization_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
+    algorithm_name: "Simulated Annealing"
+    library_used: "dimod and dwave-neal"
+    reason_for_choice: "It is an accessible, open-source heuristic solver that runs locally without requiring a D-Wave quantum API token, while still satisfying the QUBO optimization requirement."
   classification_algorithm:
-    algorithm_name: null
-    library_used: null
-    reason_for_choice: null
-  gui_development: null
+    algorithm_name: "Random Forest, Logistic Regression, Gradient Boosting"
+    library_used: "scikit-learn"
+    reason_for_choice: "Random Forest was chosen as it was mandatory per specifications. Logistic Regression and Gradient Boosting were added to provide a solid comparison baseline."
+  gui_development: "Streamlit. It allowed for rapid UI prototyping directly in Python, easily supporting a progressive disclosure wizard-flow via session states and clean data metrics visualization."
   problems_encountered:
-    - problem: null
-      solution: null
-  notes:
+    - problem: "Confusion regarding the output size of the selected features (confusing sample reduction with feature reduction)."
+      solution: "The LLM clarified the underlying math, proving that the algorithm correctly selected the target 20% of the available features."
+  notes: "A strict prompt engineering rule was enforced to ensure the LLM always appended required libraries to the requirements.txt file after generating code."
 
 llm_usage_summary:
-  # Non inserire prompt o risposte complete: saranno raccolti separatamente.
-  llms_used:    # Inserire un record per ogni LLM usato
+  llms_used:    
     - name: "Gemini"
       version: "Gemini 3.1 Pro"
       paid_subscription: yes
-      usage_level_0_to_3:   # valori da 0 (non usato) a 3 (usatissimo)     
+      usage_level_0_to_3:        
         value: 3   
   phases_where_llm_was_used:
     requirements_understanding:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Crucial for breaking down the PDF constraints into executable step-by-step meta-prompts."
     preprocessing:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Successfully generated the z-score logic and sparsity filters."
     qubo_formulation:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "The most valuable contribution. Translated complex mathematical formulas into functional BinaryQuadraticModel logic."
     optimizer_selection:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Suggested 'neal' as the ideal local solver for the QUBO problem."
     classifier_selection:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Implemented the scikit-learn models and formatted the nested JSON outputs perfectly."
     debugging:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Found out the dataset preview was showing the first 5 rows without telling the user that the full dataset was uploaded."
     testing:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Created an end-to-end pipeline test utilizing the dummy dataset injected with sparsity."
     documentation:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Drafted a highly structured README.md complete with CLI execution examples."
     gui:
       usage_level_0_to_3: 3
       usefulness_1_to_5: 5
-      notes: null
+      notes: "Refactored the initial GUI to follow strict HCI principles, including custom TOML theming."
   estimated_llm_contribution:
     percent_code_generated_or_suggested_by_llm: 100
-    percent_code_accepted_without_major_changes: 100
-    percent_documentation_generated_or_suggested_by_llm: 30
+    percent_code_accepted_without_major_changes: 90
+    percent_documentation_generated_or_suggested_by_llm: 95
   human_verification:
     # descrivere come il gruppo ha controllato gli output dell'LLM. (yes/partially/no)
     methods_used:
@@ -145,13 +144,13 @@ llm_usage_summary:
       - automated_tests: partially
       - critical_reading: partially
       - comparison_with_other_llm: no
-    notes: null
+    notes: "Human verification primarily involved strict prompt engineering and iterative testing of the CLI outputs."
   llm_misleading_outputs:
-    encountered: null  # (yes/partially/no)
-    examples_count: null   # number of cases
+    encountered: partially  # (yes/partially/no)
+    examples_count: 1   # number of cases
     categories:     # rispondere con: yes/partially/no
       wrong_python_code: no  
-      wrong_library_usage: no
+      wrong_library_usage: partially
       wrong_qubo_formulation: no
       wrong_ml_methodology: no
       hallucinated_api_or_function: no
@@ -163,27 +162,28 @@ llm_usage_summary:
     risk_of_overreliance_1_to_5: 2
     trust_in_llm_outputs_1_to_5: 4
     would_use_again: yes   # (yes/maybe/no)
-    notes: null
-  most_useful_project_activity: null
-  most_difficult_project_activity: null
+    notes: "The strict use of 'meta-prompts' in a separate chat drastically improved the quality and reliability of the generated code."
+  most_useful_project_activity: "The usage of prompts generated by another chat of the LLM."
+  most_difficult_project_activity: "Ensuring that the complex, nested JSON metric outputs exactly matched the strict schema required by the PDF specifications."
   main_lessons_learned:   # descrivere con una frase per ogni lezione appresa
-    - null
+    - "Constraining LLM responses with highly explicit rules (like appending dependencies) ensures a stable and reproducible environment."
+    - "Separating UI design concerns into configuration files (.toml) rather than python scripts prevents the LLM from accidentally breaking core application logic."
   main_problems:
-    - problem: null
-      severity_1_to_5: null
-      how_resolved: null
+    - problem: "Ensuring the LLM strictly adhered to the complex, nested JSON metric schemas required by the PDF specifications."
+      severity_1_to_5: 3
+      how_resolved: "Resolved by explicitly passing the required JSON mockups within the meta-prompts and enforcing strict formatting rules."
 
 final_results:   # descrivere con una frase per ogni elemento che ritenete di citare
   what_worked_well:
-    - null
+    - "The Streamlit session_state architecture successfully prevented users from accessing pipeline stages out of order."
   what_did_not_work_well:
-    - null
-  main_benefit_of_using_llm: null
-  main_problem_of_using_llm: null
+    - "Managing long, complex terminal commands with argparse required careful structuring to avoid input errors."
+  main_benefit_of_using_llm: "The LLM drastically reduced the time required to bridge the gap between mathematical theory (QUBO) and practical implementation (dimod/neal)."
+  main_problem_of_using_llm: "The necessity of writing extremely detailed 'meta-prompts' to ensure the coding LLM did not hallucinate features or ignore constraints."
   surprising_findings:
-    - null
+    - "The LLM demonstrated an unexpected ability to debug human conceptual errors, explaining the distinction between feature reduction and sample size reduction."
   limitations_of_the_solution:
-    - null
+    - "The simulated annealing algorithm may experience increased latency if the input dataset contains an extremely high number of original features."
   threats_to_validity_from_team_perspective:
-    - null
+    - "Relying heavily on specific random seeds (e.g., seed=42) throughout the pipeline guarantees reproducibility but may obscure variance in model performance across different splits."
 
